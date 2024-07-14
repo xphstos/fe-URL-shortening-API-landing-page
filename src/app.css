@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        color: theme("colors.violet.900");
+        font-size: theme("fontSize.lg");
+        font-family: theme("fontFamily.sans");
+        background-color: theme("colors.white");
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus {
+        border: none;
+        -webkit-text-fill-color: inherit;
+        -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+        box-shadow: 0 0 0px 1000px transparent inset;
+        transition: background-color 5000s ease-in-out 0s;
+        color: inherit;
+    }
+
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+    input[type="number"] {
+        -moz-appearance: textfield;
+    }
+
+    ::selection {
+        background: theme("colors.violet.DEFAULT");
+        color: theme("colors.white");
+    }
+}
+
+@layer utilities {
+    .padding-container {
+        padding-inline: max(
+            var(--padding-inline, fluid(1.5rem, 3rem)),
+            50% - (var(--container, 1110px) / 2)
+        );
+    }
+
+    .padding-container-bleed-start {
+        padding-inline-end: max(
+            var(--padding-inline, 1.5rem),
+            50% - (var(--container, 1110px) / 2)
+        );
+    }
+
+    .padding-container-bleed-end {
+        padding-inline-start: max(
+            var(--padding-inline, 1.5rem),
+            50% - (var(--container, 1110px) / 2)
+        );
+    }
+
+    .bg-boost {
+        background:
+            url("/bg-boost-mobile.svg") no-repeat center / cover,
+            theme("colors.violet.DEFAULT");
+    }
+
+    @media (width > 768px) {
+        .bg-boost {
+            background:
+                url("/bg-boost-desktop.svg") no-repeat center / cover,
+                theme("colors.violet.DEFAULT");
+        }
+    }
+
+    .bg-shorten {
+        background: linear-gradient(
+            to bottom,
+            theme("colors.white"),
+            50%,
+            theme("colors.neutral.100") 50%
+        );
+    }
+
+    .bg-shorten-form {
+        background:
+            url("/bg-shorten-mobile.svg") no-repeat center / cover,
+            theme("colors.violet.DEFAULT");
+    }
+
+    @media (width > 768px) {
+        .bg-shorten-form {
+            background:
+                url("/bg-shorten-desktop.svg") no-repeat center / cover,
+                theme("colors.violet.DEFAULT");
+        }
+    }
+}
