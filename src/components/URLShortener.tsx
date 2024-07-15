@@ -5,7 +5,6 @@ import * as v from "valibot";
 import { Button } from "./Button";
 import { cn } from "../utils/cn";
 import { createStore } from "solid-js/store";
-import { createUniqueId } from "solid-js";
 import { URL } from "./URL";
 import { IconLoading } from "./icons/Loading";
 import { makePersisted } from "@solid-primitives/storage";
@@ -24,7 +23,6 @@ const FormSchema = v.object({
 
 type URLForm = v.InferOutput<typeof FormSchema>;
 type ShortenURL = {
-  id: string;
   long_url: string;
   short_url: string;
 };
@@ -67,7 +65,6 @@ export const URLShortener: Component<Props> = (props) => {
     setStore("shortenedURLs", (prev) => [
       ...prev,
       {
-        id: createUniqueId(),
         long_url: url,
         short_url: shortenedURL.short_url,
       },
