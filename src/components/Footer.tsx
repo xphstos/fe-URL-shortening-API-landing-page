@@ -13,14 +13,14 @@ type Props = {
   className?: ClassValue;
 };
 
-const Icons = {
-  Facebook: <IconFacebook className="m-auto size-4 shrink-0" />,
-  Twitter: <IconTwitter className="m-auto size-4 shrink-0" />,
-  Pinterest: <IconPinterest className="m-auto size-4 shrink-0" />,
-  Instagram: <IconInstagram className="m-auto size-4 shrink-0" />,
-};
-
 export const Footer: Component<Props> = (props) => {
+  const Icons = {
+    Facebook: <IconFacebook className="m-auto size-4 shrink-0" />,
+    Twitter: <IconTwitter className="m-auto size-4 shrink-0" />,
+    Pinterest: <IconPinterest className="m-auto size-4 shrink-0" />,
+    Instagram: <IconInstagram className="m-auto size-4 shrink-0" />,
+  };
+
   return (
     <footer
       class={cn(

@@ -78,8 +78,9 @@
         background: linear-gradient(
             to bottom,
             theme("colors.white"),
-            50%,
-            theme("colors.neutral.100") 50%
+            calc(50% + var(--background-position, 0px)),
+            theme("colors.neutral.100")
+                calc(50% + var(--background-position, 0px))
         );
     }
 

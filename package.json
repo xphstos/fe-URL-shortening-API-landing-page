@@ -17,6 +17,8 @@
   },
   "dependencies": {
     "@modular-forms/solid": "^0.22.0",
+    "@solid-primitives/clipboard": "^1.5.10",
+    "@solid-primitives/storage": "^3.8.0",
     "autoprefixer": "^10.4.19",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
